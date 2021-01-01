@@ -1,0 +1,191 @@
+@import '_mediaQuerry';
+@import'header';
+@import'mixin';
+
+* {
+    padding: 0px;
+    margin: 0px;
+    font-family: letter-gothic-std, monospace;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 100%;
+    cursor: none;
+
+    @include responsive(desktop) {
+        font-size: 100%;
+        cursor: default;
+    }
+
+    @include responsive(big-tablet) {
+        font-size: 95%;
+    }
+
+    @include responsive(tablet) {
+        font-size: 90%;
+    }
+
+    @include responsive(phone) {
+        font-size: 76%;
+
+    }
+}
+
+body {
+    background-image: url(../../images/bg.png);
+    background-repeat: no-repeat;
+    overflow: hidden;
+    background-size: 360px;
+    background-position-y: 820px;
+    background-position-x: -90px;
+
+    @include responsive(phone) {
+        background-image: none;
+
+    }
+
+
+
+    //main page
+
+    .main {
+
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        position: relative;
+        top: 130px;
+
+        @include responsive(tablet) {
+            display: flex;
+            flex-direction: column-reverse;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            top: 0px
+        }
+
+        .description {
+            @include responsive(tablet) {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin-top: 40px;
+            }
+
+            @include responsive(phone) {
+                margin-top: 30px;
+            }
+
+            .description__title {
+                text-align: right;
+                font-size: 1.375rem;
+                font-weight: medium;
+                letter-spacing: 2px;
+                margin-bottom: 32px;
+
+                @include responsive(tablet) {
+                    text-align: center;
+                }
+
+
+
+            }
+
+            .description__job {
+                text-align: right;
+                font-size: 4.125em;
+                font-weight: bold;
+                font-family: sitka banner;
+                color: #4E4B68;
+                margin-bottom: 16px;
+
+                @include responsive(tablet) {
+                    text-align: center;
+
+
+                }
+            }
+
+            .description__desc {
+                text-align: right;
+                color: #B7B2AC;
+                font-size: 1.25rem;
+                font-weight: PT Stars;
+                font-weight: normal;
+                margin-bottom: 35px;
+
+                @include responsive(tablet) {
+                    text-align: center;
+                }
+            }
+
+            .description__button {
+
+                float: right;
+                // background-color: ;
+                // width: 224px;
+                // height: 60px;
+                // border-radius: 43px;
+                @include button(#7A73B9, white, 224px, 60px, 1.2rem);
+                position: relative;
+
+                @include responsive(tablet) {
+                    float: center;
+
+                }
+
+                @include responsive(phone) {
+                    width: 200px;
+                    height: 55px;
+
+                }
+
+
+                a {
+                    text-decoration: none;
+                    color: white;
+                    position: absolute;
+                    left: 50%;
+                    top: 50%;
+                    transform: translate(-50%, -50%);
+                    font-size: 1rem;
+
+                }
+            }
+
+
+
+        }
+
+        .picture {
+            .picture__img {
+                width: 447px;
+
+                @include responsive(desktop) {
+                    width: 420px;
+                }
+
+                @include responsive(big-tablet) {
+                    width: 380px;
+                }
+
+                @include responsive(tablet) {
+                    width: 380px;
+                    margin-top: 10px;
+
+                }
+
+                @include responsive(phone) {
+                    width: 210px;
+
+
+                }
+            }
+        }
+
+
+
+
+    }
+}

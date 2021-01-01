@@ -1,0 +1,23 @@
+@mixin button ($b-color, $color, $width, $height, $fsize) {
+
+    background-color: $b-color;
+    border: none;
+    border-radius: 43px;
+    width: $width;
+    height: $height;
+    color: $color;
+    font-weight: bold;
+    font-size: $fsize;
+    outline: none;
+    cursor: pointer;
+
+    &:hover {
+        // color: $b-color;
+        // background-color: transparent;
+        // border: 2px solid $b-color;
+        box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.5);
+    }
+
+
+
+}

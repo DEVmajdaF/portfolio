@@ -1,0 +1,78 @@
+@import '_mediaQuerry';
+@import 'header';
+@import 'mixin';
+
+* {
+    padding: 0px;
+    margin: 0px;
+    font-family: letter-gothic-std, monospace;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 100%;
+    box-sizing: border-box;
+
+    @include responsive(desktop) {
+        font-size: 100%;
+    }
+
+    @include responsive(big-tablet) {
+        font-size: 95%;
+    }
+
+    @include responsive(tablet) {
+        font-size: 90%;
+    }
+
+    @include responsive(phone) {
+        font-size: 76%;
+
+    }
+}
+
+
+.container {
+    .project {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        margin-top: 10%;
+
+        .project__contennu {
+            .project__title{
+                font-size:2rem;
+                margin-bottom: 20px;
+            }
+            .project__text{
+                font-size:1.5rem;
+                font-weight: 500;
+                margin-bottom: 40px;
+            }
+            .project__link {
+                background-color: rgb(109, 96, 231);
+                color: rgb(255, 255, 255);
+                padding: 10px 6px;
+                font-size: 1rem;
+                font-weight: bold;
+                text-decoration: none;
+                cursor: pointer;
+                transition: 0.4s all;
+
+                &:hover {
+                    box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.5);
+                }
+
+            }
+
+        }
+
+        .project__img {
+            img {
+                width: 900px;
+
+            }
+
+
+        }
+    }
+}

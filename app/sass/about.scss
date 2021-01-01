@@ -1,0 +1,229 @@
+@import'_mediaQuerry';
+@import 'header';
+@import 'mixin';
+
+* {
+    padding: 0px;
+    margin: 0px;
+    font-family: letter-gothic-std, monospace;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 100%;
+    cursor: none;
+
+    @include responsive(desktop) {
+        font-size: 100%;
+        cursor: default;
+    }
+
+    @include responsive(big-tablet) {
+        font-size: 95%;
+    }
+
+    @include responsive(tablet) {
+        font-size: 90%;
+    }
+
+    @include responsive(phone) {
+        font-size: 76%;
+
+    }
+}
+
+.container {
+    .about {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 10%;
+        // margin-top: 5%;
+        background-color: #423E65;
+        height: 400px;
+
+        .about__text {
+            text-align: center;
+            color: white;
+
+            p {
+                font-size: 1.4rem;
+
+            }
+
+
+
+            .about__social {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                margin-top: 30px;
+
+                a {
+                    img {
+                        width: 40px;
+                        margin-right: 20px;
+
+                    }
+
+                }
+
+            }
+
+
+
+        }
+
+
+
+    }
+
+    .ex {
+        .title {
+            font-size: 1.6rem;
+            margin: 0 25%;
+            border-bottom: 2px black solid;
+            display: inline-block;
+        }
+
+
+
+        .timeline {
+            max-width: 1300px;
+            margin: 6% auto;
+            position: relative;
+
+
+
+
+
+
+            .container {
+                width: 50%;
+                position: relative;
+
+                &.right {
+                    left: 50%;
+                }
+
+                &.right::after {
+                    left: 0%;
+
+                }
+
+                &.left {
+                    left: 0%;
+                    text-align: end;
+                    margin-right: 6%;
+                }
+
+
+                .content {
+
+                    padding: 10px 19px;
+
+                    h1 {
+                        font-size: 1.5rem;
+                    }
+
+                    h2 {
+                        margin-top: 10px;
+                    }
+
+                }
+
+
+
+            }
+
+            .container::after {
+                content: "";
+                position: absolute;
+                width: 20px;
+                height: 20px;
+                border: 5px solid #7A73B9;
+                border-radius: 50%;
+                left: 100%;
+                margin-left: -15px;
+                background-color: white;
+                top: 8px;
+
+            }
+
+
+
+
+
+
+        }
+
+        .timeline::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            background-color: black;
+            width: 6px;
+            margin-left: -3px;
+
+
+
+
+
+
+        }
+    }
+
+    .skils {
+        height: auto;
+        margin-bottom: 10%;
+        margin: 0 auto;
+        width: 50%;
+        font-size: 1.4rem;
+
+        h1 {
+            margin-bottom: 11%;
+            border-bottom: 2px black solid;
+            display: inline-block;
+            font-size: 1.6rem;
+
+        }
+
+
+
+        ul {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-bottom: 8%;
+
+            li {
+                width: 236px;
+                height: 50px;
+                margin-bottom: 30px;
+                border: 2px solid rgb(0, 0, 0);
+                list-style: none;
+                position: relative;
+
+
+                a {
+                    font-size: 1.2rem;
+                    text-decoration: none;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+
+                }
+
+            }
+        }
+
+
+    }
+
+
+
+
+}

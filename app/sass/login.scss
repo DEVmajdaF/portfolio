@@ -1,0 +1,186 @@
+@import'_mediaQuerry';
+@import 'header';
+@import 'mixin';
+
+* {
+    padding: 0px;
+    margin: 0px;
+    font-family: letter-gothic-std, monospace;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 100%;
+
+    @include responsive(desktop) {
+        font-size: 100%;
+    }
+
+    @include responsive(big-tablet) {
+        font-size: 95%;
+    }
+
+    @include responsive(tablet) {
+        font-size: 90%;
+    }
+
+    @include responsive(phone) {
+        font-size: 76%;
+
+    }
+}
+
+
+body {
+
+
+    .login {
+        display: flex;
+        flex-direction: row;
+        height: 937px;
+
+        .menu {
+
+
+            .navphone {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-evenly;
+                background-color: #423e65;
+                align-items: center;
+                position: absolute;
+                // top: 11vh;
+                height: 100%;
+                width: 150px;
+                z-index: 1;
+                transform: translateX(-100%);
+                transition-timing-function: ease-in;
+                transition: 0.5s;
+                // display: none;
+
+
+                // @include responsive(phone) {
+                //     top: 11vh;
+                // }
+
+                &.navphone--active {
+                    transform: translateX(0%);
+                }
+
+                .navphone__items {
+
+
+                    list-style: none;
+
+
+                    .navphone__link {
+
+
+                        text-decoration: none;
+                        font-size: 17px;
+                        color: white;
+
+                    }
+                }
+            }
+        }
+
+        .login__welcome {
+            width: 50%;
+            position: relative;
+
+            .login__hamburger {
+                position: absolute;
+                top: 70px;
+                left: 70px;
+                z-index: 2;
+            }
+
+            h1 {
+
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                font-size: 3.5rem;
+                font-family: Segoe Script;
+                font-style: normal;
+                font-weight: 300;
+
+            }
+
+
+
+        }
+
+        .login__enter {
+
+            width: 50%;
+            position: relative;
+            background-color: #423E65;
+
+            .login__content {
+                // display: flex;
+                // flex-direction: column;
+                // align-items: center;
+                // justify-content: center;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+
+                h1 {
+
+                    color: white;
+                    font-size: 1.3rem;
+
+                }
+
+                img {
+                    display: block;
+                    margin: 0 auto;
+                    margin-bottom: 20px;
+                }
+
+                input[type="email"] {
+
+                    width: 300px;
+                    height: 50px;
+                    padding-left: 20px;
+                    margin-bottom: 20px;
+                    font-size: 1.1rem;
+
+                    @include responsive(tablet) {
+                        width: 200px;
+
+                    }
+
+
+
+                }
+
+                input[type="password"] {
+
+                    width: 300px;
+                    height: 50px;
+                    padding-left: 20px;
+                    margin-bottom: 20px;
+                    font-size: 1.1rem;
+                    @include responsive(tablet) {
+                        width: 200px;
+
+                    }
+
+
+                }
+
+                .submit {
+                    display: block;
+                    margin: 0 auto;
+                    @include button(#7A73B9, white, 146px, 54px, 1rem);
+
+                }
+            }
+
+        }
+
+    }
+}

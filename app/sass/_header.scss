@@ -1,0 +1,311 @@
+//header
+
+.cursor {
+    height: 3rem;
+    width: 3rem;
+    border: 2px solid black;
+    position: absolute;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    pointer-events: none; // because when you click the link nothing show 
+    transition: all 0.3s ease;
+    transition-property: background, transform;
+    transform-origin: 100% 100%;
+
+    @include responsive(tablet) {
+        display: none;
+
+    }
+
+    &.link-grow {
+        background-color: black;
+        transform: scale(1.5);
+    }
+}
+
+header {
+
+
+
+    .navDesk {
+        display: flex;
+        flex-direction: row;
+        min-height: 8vh;
+        background-color: #EFEFEF;
+        padding: 10px;
+        border-bottom: black 1px solid;
+        justify-content: center;
+        list-style: none;
+        align-items: center;
+        position: relative;
+
+
+        .navDesk__hamburger {
+            display: none;
+            cursor: pointer;
+
+            @include responsive(tablet) {
+                display: block;
+                position: absolute;
+                top: 39%;
+                left: 10%;
+            }
+        }
+
+        .navDesk__secondnav {
+
+            .navDesk__logo {
+                width: 77px;
+
+                @include responsive(tablet) {
+                    width: 60px;
+                }
+            }
+        }
+
+        .navDesk__links {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            list-style: none;
+            text-decoration: none;
+            align-items: center;
+
+
+
+
+            @include responsive(tablet) {
+                display: none;
+
+            }
+
+
+
+            .navDesk__link {
+
+
+                margin-right: 50px;
+                margin-left: 50px;
+                color: rgb(0, 0, 0);
+
+                &:hover a {
+                    color: white;
+                }
+
+
+
+
+
+                @include responsive(big-tablet) {
+                    margin-right: 30px;
+                    margin-left: 30px;
+                }
+
+                .links {
+                    text-decoration: none;
+                    font-size: 1.25rem;
+                    font-weight: bold;
+                    position: relative;
+                    color: black;
+                    z-index: 2;
+
+
+
+
+
+
+
+
+                    // a::after {
+                    //     content: "";
+                    //     position: absolute;
+                    //     height: 2px;
+                    //     width: 20px;
+                    //     background: black;
+                    //     top: 100%;
+                    //     right: -8px;
+                    //     transform: translateX(-50%);
+                    // }
+                }
+            }
+        }
+
+        .navDesk__thirdnav {
+            display: flex;
+            justify-content: space-around;
+            flex-direction: row;
+        }
+
+        .navDesk__langue {
+            position: absolute;
+            top: 35%;
+            right: 10%;
+            border: black solid 1px;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+
+            @include responsive(tablet) {
+                right: 5%;
+            }
+
+            a {
+                text-decoration: none;
+                font-size: 1.25rem;
+                font-weight: bold;
+                color: rgb(0, 0, 0);
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+
+
+            }
+        }
+    }
+
+    .navphone {
+        display: none;
+
+
+        @include responsive(tablet) {
+
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            background-color: rgb(22, 26, 82);
+            align-items: center;
+            position: absolute;
+            top: 10vh;
+            height: 92vh;
+            width: 100%;
+            z-index: 4;
+            transform: translateX(-100%);
+            transition-timing-function: ease-in;
+            transition: 0.5s;
+        }
+
+        @include responsive(phone) {
+            top: 11vh;
+        }
+
+        &.navphone--active {
+            transform: translateX(0%);
+        }
+
+        .navphone__items {
+
+            @include responsive(tablet) {
+                list-style: none;
+            }
+
+            .navphone__link {
+
+                @include responsive(tablet) {
+                    text-decoration: none;
+                    font-size: 30px;
+                    color: white;
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// header .navDesk {
+//     height: auto;
+//     background-color: #FAFAFA;
+//     border-bottom: 1px solid black;
+//     display: flex;
+//     flex-direction: row;
+//     justify-content: center;
+//     list-style: none;
+//     align-items: center;
+//     padding: 10px;
+//     position: relative;
+
+//     @include responsive(tablet) {}
+
+//     .navDesk__hamburger {
+//         display: none;
+
+//         @include responsive(tablet) {
+//             display: inline-block;
+//             position: absolute;
+//             top: 34%;
+//             left: 10%;
+//             width: 27px;
+
+//         }
+//     }
+
+//     .navDesk__langue {
+//         font-size: 1rem;
+
+//     }
+
+//     .navDesk__item {
+//         @include responsive(tablet) {
+//             display: none;
+//         }
+
+//         .navDesk__link {
+//             text-decoration: none;
+//             margin-right: 50px;
+//             margin-left: 50px;
+//             font-size: 1.25rem;
+//             font-weight: bold;
+//             position: relative;
+//             color: black;
+//         }
+
+//         .navDesk__link::after {
+//             content: "";
+//             position: absolute;
+//             height: 2px;
+//             width: 20px;
+//             background: black;
+//             top: 100%;
+//             right: -8px;
+//             transform: translateX(-50%);
+//         }
+
+//     }
+
+//     .navDesk__logo {
+//         margin-right: 50px;
+//         margin-left: 50px;
+//         width: 77px;
+
+//         @include responsive(tablet) {}
+//     }
+
+// }
